@@ -68,7 +68,7 @@ public class CommonCISValidation {
 	}
 	*/
 
-public CISResults  viewPatientsValidation(HttpServletRequest request,DigihealthCareProfileData viewPatients) {
+public CISResults  adminViewPlansValidation(String patientId,HttpServletRequest request) {
 		
 		CISResults cisResult=new CISResults();
 		ArrayList<String> emptyValidatonArray= new ArrayList<String>();
@@ -84,12 +84,12 @@ public CISResults  viewPatientsValidation(HttpServletRequest request,DigihealthC
   	               cisResult.setResponseCode(CISConstants.RESPONSE_FAILURE);
                }
      // Validate Null Values in Profile Data
-		/* for (String st : emptyValidatonArray) {
+		 for (String st : emptyValidatonArray) {
 	            if  (st==null || st.equals(""))
 	            	cisResult.setResponseCode(CISConstants.RESPONSE_FAILURE);
-	            }   */
+	            }   
 		  
-		/* if(cisResult.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
+		 /*if(cisResult.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
 		        {
 			        String emailCheck = CISConstants.EMAIL_REGEX;
 		            Boolean checkValue = emailId.matches(emailCheck);
@@ -97,11 +97,43 @@ public CISResults  viewPatientsValidation(HttpServletRequest request,DigihealthC
 			          {
 				         cisResult.setResponseCode(CISConstants.RESPONSE_FAILURE);
 			          }
-			     }*/
-		 
+			     }
+		 */
 		return cisResult;
 	}
 	
+public CISResults  viewPatientsValidation(HttpServletRequest request, DigihealthCareProfileData viewPatients) {
+	
+	CISResults cisResult=new CISResults();
+	ArrayList<String> registrationValues= new ArrayList<String>();
+	
+	cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+	String headerAuthorization=request.getHeader(CISConstants.HEADERS_AUTHROIZATION);
+        
+	//Validate Headers AUTHROIZATION
+    if(headerAuthorization.equals(CISConstants.HEADERS_AUTHROIZATION_VAUE))
+    {
+    	cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+    }else
+    {
+    	cisResult.setResponseCode(CISConstants.RESPONSE_FAILURE);
+    }
+
+ // Validate Null Values in Profile Data
+    if(cisResult.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
+	 {
+    
+	 for (String checkvalues : registrationValues) {
+            if  (checkvalues==null || checkvalues.equals(""))
+            	cisResult.setResponseCode(CISConstants.RESPONSE_FAILURE);
+          } 
+	 }    
+	
+	 cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+	 return cisResult;
+}
+
+
 public CISResults  addPatientValidation(DigihealthCareProfileData savePatient,HttpServletRequest request) {
 		
 	CISResults cisResult=new CISResults();
@@ -469,7 +501,7 @@ public CISResults  addPatientValidation(DigihealthCareProfileData savePatient,Ht
 
 
 
-	public CISResults updateProfileValidation(
+	/*public CISResults updateProfileValidation(
 			DigihealthCareProfileData updateProfile,
 			HttpServletRequest request, String userId, String sessionId) {
 		// TODO Auto-generated method stub
@@ -511,7 +543,7 @@ public CISResults  addPatientValidation(DigihealthCareProfileData savePatient,Ht
 		
 		return cisResult;
 	}
-
+*/
 
 
 	/*public CISResults saveFeedbackValidation(
