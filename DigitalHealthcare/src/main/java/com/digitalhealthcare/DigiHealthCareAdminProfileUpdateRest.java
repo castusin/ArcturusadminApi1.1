@@ -34,12 +34,12 @@ public class DigiHealthCareAdminProfileUpdateRest {
 			 String sessionId=adminUpdateProfile.getSessionId();
 			 String userId=adminUpdateProfile.getUserId();
 		 CommonCISValidation CommonCISValidation=new CommonCISValidation();
-		CISResults cisResult=CommonCISValidation.adminUpdateProfileValidation(adminUpdateProfile,request,userId);
-		  if(cisResult.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
-		    {
+		//CISResults cisResult=CommonCISValidation.adminUpdateProfileValidation(adminUpdateProfile,request,userId);
+		  //if(cisResult.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
+		   // {
 			  DigiHealthCareAdminProfileUpdateWebservice profileUpdateWebservice= new DigiHealthCareAdminProfileUpdateWebservice();
-		       cisResult = profileUpdateWebservice.updateProfile(adminUpdateProfile);
-		   }
+			  CISResults cisResult = profileUpdateWebservice.updateProfile(adminUpdateProfile);
+		  // }
 		  return returnJsonData(cisResult);
 	 }
 	 

@@ -39,13 +39,13 @@ public class DigiHealthCareViewPatientsRestService {
  
 		 
 		 CommonCISValidation CommonCISValidation=new CommonCISValidation();
-		 CISResults cisResults=CommonCISValidation.viewPatientsValidation(request,viewPatients);
-		if(cisResults.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
-		  {
+		// CISResults cisResults=CommonCISValidation.viewPatientsValidation(request,viewPatients);
+		//if(cisResults.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
+		 // {
 			 DigiHealthCareViewPatientsServiceWebservice patientsServiceWebservice= new DigiHealthCareViewPatientsServiceWebservice();
-			   cisResults  = patientsServiceWebservice.viewPatients(viewPatients);
+			 CISResults cisResults  = patientsServiceWebservice.viewPatients(viewPatients);
 		  logger.info(" DigitalHealthCare:viewPatients :"+cisResults);
-		}
+	//	}
 		
 		// Capture Service End time
 		 String serviceEndTime=time.getTimeZone();

@@ -36,12 +36,12 @@ public class DigitalHealthAdminCreateRestService {
 		logger.info("Digital HealthCare add patient Request Parameters :"+requestParameters);*/
 		CommonCISValidation CommonCISValidation=new CommonCISValidation();
 		
-		CISResults cisResult=CommonCISValidation.addPatientValidation(savePatient,request);
-		if(cisResult.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
-		 {
+		//CISResults cisResult=CommonCISValidation.addPatientValidation(savePatient,request);
+		//if(cisResult.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
+		// {
 		DigihealthCareAdminCreateServiceWebservice adminCreateServiceWebservice = new DigihealthCareAdminCreateServiceWebservice();
-		 cisResult = adminCreateServiceWebservice.addPatients(savePatient);
-		 }
+		CISResults cisResult = adminCreateServiceWebservice.addPatients(savePatient);
+		// }
 		
 		// Capture Service End time
 		String serviceEndTime=time.getTimeZone();

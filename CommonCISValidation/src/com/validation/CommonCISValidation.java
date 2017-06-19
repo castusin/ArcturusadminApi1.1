@@ -7,8 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import com.cis.CISConstants;
 import com.cis.CISResults;
 import com.cis.CISSessionWebservice;
-import com.digitalhealthcare.DigiHealthCareAdminProfileUpdate;
-import com.digitalhealthcare.DigihealthCareProfileData;
 
 
 public class CommonCISValidation {
@@ -101,8 +99,40 @@ public CISResults  adminViewPlansValidation(String patientId,HttpServletRequest 
 		 */
 		return cisResult;
 	}
+/*public CISResults  editSchedulePlanValidation(HttpServletRequest request,DigiHealthCareEditSchedulePlanModel editSchedulePlan) {
 	
-public CISResults  viewPatientsValidation(HttpServletRequest request, DigihealthCareProfileData viewPatients) {
+	CISResults cisResult=new CISResults();
+	ArrayList<String> emptyValidatonArray= new ArrayList<String>();
+	
+	cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+	String headerAuthorization=request.getHeader(CISConstants.HEADERS_AUTHROIZATION);
+         //Validate Headers AUTHROIZATION
+    if(headerAuthorization.equals(CISConstants.HEADERS_AUTHROIZATION_VAUE))
+          {
+	               cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+          }else
+          {
+	               cisResult.setResponseCode(CISConstants.RESPONSE_FAILURE);
+           }
+ // Validate Null Values in Profile Data
+	 for (String st : emptyValidatonArray) {
+            if  (st==null || st.equals(""))
+            	cisResult.setResponseCode(CISConstants.RESPONSE_FAILURE);
+            }   
+	  
+	 if(cisResult.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
+	        {
+		        String emailCheck = CISConstants.EMAIL_REGEX;
+	            Boolean checkValue = emailId.matches(emailCheck);
+		        if(Boolean.FALSE.equals(checkValue))
+		          {
+			         cisResult.setResponseCode(CISConstants.RESPONSE_FAILURE);
+		          }
+		     }
+	 
+	return cisResult;
+}*/
+/*public CISResults  viewPatientsValidation(HttpServletRequest request, DigihealthCareProfileData viewPatients) {
 	
 	CISResults cisResult=new CISResults();
 	ArrayList<String> registrationValues= new ArrayList<String>();
@@ -132,9 +162,9 @@ public CISResults  viewPatientsValidation(HttpServletRequest request, Digihealth
 	 cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
 	 return cisResult;
 }
+*/
 
-
-public CISResults  addPatientValidation(DigihealthCareProfileData savePatient,HttpServletRequest request) {
+/*public CISResults  addPatientValidation(DigihealthCareProfileData savePatient,HttpServletRequest request) {
 		
 	CISResults cisResult=new CISResults();
 	ArrayList<String> registrationValues= new ArrayList<String>();
@@ -182,7 +212,7 @@ public CISResults  addPatientValidation(DigihealthCareProfileData savePatient,Ht
 	 cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
 	 return cisResult;
 }
-
+*/
 	
 	/*public CISResults  requestOTPValidation(String phoneNumber,String emailId,HttpServletRequest request) {
 		CISResults cisResult=new CISResults();
@@ -658,7 +688,7 @@ public CISResults  addPatientValidation(DigihealthCareProfileData savePatient,Ht
 		return cisResult;
 	}
 
-	public CISResults adminUpdateProfileValidation(
+	/*public CISResults adminUpdateProfileValidation(
 			DigiHealthCareAdminProfileUpdate adminUpdateProfile,
 			HttpServletRequest request, String userId) {
 		// TODO Auto-generated method stub
@@ -693,7 +723,7 @@ public CISResults  addPatientValidation(DigihealthCareProfileData savePatient,Ht
 		
 		return cisResult;
 	}
-
+*/
 	public CISResults addCareTakers(HttpServletRequest request,String userId, String phoneNumber) {
 		// TODO Auto-generated method stub
 		CISResults cisResult=new CISResults();
