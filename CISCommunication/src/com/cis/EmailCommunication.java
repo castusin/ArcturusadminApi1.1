@@ -122,16 +122,10 @@ public class EmailCommunication {
                 
   				
 				"<p>Hi, <br />"+
-				 "<p>Please find your appointment details.</b><br />"+
-                "<br />\n"+
-                "<p>"+type+"</b><br />"+
-                "<p>Start Date/Time :"+startTime+""+
-				"<p>Staff Name : "+ fname +" "+ name +""+
-				"<p>Repeats for "+recurrenceTime+" weeks</b><br />"+
+				 "<p>Your care plan schedule has been modified.</b><br />"+
+				 "<p>Please check updated schedule in Digital Health Care Mobile App. </b><br />"+
 				
-				/*"<p><b>EndDateTime</b> :"+endTime+"</b><br />"+
-				"<p><b>Recurrence</b> :"+recurrenceTime+"</b><br />"+*/
-				 "<p>Please call our office if you have any questions. </b><br />"+
+				 "<p>If you have any questions, please contact our office.</b><br />"+
                 
                 "<br />\n"+
                 "  Thanks,<br />\n" +
@@ -214,18 +208,14 @@ public class EmailCommunication {
                 "</head>\n" +
                 "\n" +
                 "<body>\n" +
-                 "<p>Arcturus Care </b><br />"+
+                /* "<p>Arcturus Care </b><br />"+*/
                 
   				
 				"<p>Hi, <br />"+
+				 "<p>Your care plan schedule has been modified.</b><br />"+
+				 "<p>Please check updated schedule in Digital Health Care Mobile App. </b><br />"+
 				
-				"<p>The following appointment has been cancelled</b><br />"+
-				
-  				"<p>"+type+"</b><br />"+
-  				"<p>Start Date/Time :"+startTime+""+
-  				"<p>Staff Name : "+ fname +" "+ lname +""+
-                 
-                "<p>Please call our office if you have any questions. </b><br />"+
+				 "<p>If you have any questions, please contact our office.</b><br />"+
                 
                 "<br />\n"+
                 "  Thanks,<br />\n" +
