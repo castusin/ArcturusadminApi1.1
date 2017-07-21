@@ -87,16 +87,7 @@ public CISResults  adminViewPlansValidation(String patientId,HttpServletRequest 
 	            	cisResult.setResponseCode(CISConstants.RESPONSE_FAILURE);
 	            }   
 		  
-		 /*if(cisResult.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
-		        {
-			        String emailCheck = CISConstants.EMAIL_REGEX;
-		            Boolean checkValue = emailId.matches(emailCheck);
-			        if(Boolean.FALSE.equals(checkValue))
-			          {
-				         cisResult.setResponseCode(CISConstants.RESPONSE_FAILURE);
-			          }
-			     }
-		 */
+		
 		return cisResult;
 	}
 /*public CISResults  editSchedulePlanValidation(HttpServletRequest request,DigiHealthCareEditSchedulePlanModel editSchedulePlan) {
@@ -790,4 +781,153 @@ public CISResults  adminViewPlansValidation(String patientId,HttpServletRequest 
 			 }
 			return cisResult;
 	}
+
+	/*public CISResults createScheduleValidation(
+			DigiHealthCareCreateScheduleModel createSchedule,
+			HttpServletRequest request) {
+
+		CISResults cisResult=new CISResults();
+		
+		cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+		String headerAuthorization=request.getHeader(CISConstants.HEADERS_AUTHROIZATION);
+	        
+		//Validate Headers AUTHROIZATION
+	    if(headerAuthorization.equals(CISConstants.HEADERS_AUTHROIZATION_VAUE))
+	    {
+	    	cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+	    }else
+	    {
+	    	cisResult.setResponseCode(CISConstants.RESPONSE_FAILURE);
+	    }
+	  
+		 cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+		 return cisResult;
+	}*/
+
+	public CISResults deleteSchedulePlanValidation(String aptId,
+			String patientId, int seriesId, HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		CISResults cisResult=new CISResults();
+		
+		cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+		String headerAuthorization=request.getHeader(CISConstants.HEADERS_AUTHROIZATION);
+	        
+		//Validate Headers AUTHROIZATION
+	    if(headerAuthorization.equals(CISConstants.HEADERS_AUTHROIZATION_VAUE))
+	    {
+	    	cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+	    }else
+	    {
+	    	cisResult.setResponseCode(CISConstants.RESPONSE_FAILURE);
+	    }
+	  
+		 cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+		 return cisResult;
+	}
+
+	public CISResults deleteStaffMemberValidation(int staffId,
+			HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		CISResults cisResult=new CISResults();
+		
+		cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+		String headerAuthorization=request.getHeader(CISConstants.HEADERS_AUTHROIZATION);
+	        
+		//Validate Headers AUTHROIZATION
+	    if(headerAuthorization.equals(CISConstants.HEADERS_AUTHROIZATION_VAUE))
+	    {
+	    	cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+	    }else
+	    {
+	    	cisResult.setResponseCode(CISConstants.RESPONSE_FAILURE);
+	    }
+	  
+		 cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+		 return cisResult;
+	}
+
+	/*public CISResults editSchedulePlanValidation(HttpServletRequest request,
+			DigiHealthCareEditSchedulePlanModel editSchedulePlan) {
+		// TODO Auto-generated method stub
+		CISResults cisResult=new CISResults();
+		
+		cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+		String headerAuthorization=request.getHeader(CISConstants.HEADERS_AUTHROIZATION);
+	        
+		//Validate Headers AUTHROIZATION
+	    if(headerAuthorization.equals(CISConstants.HEADERS_AUTHROIZATION_VAUE))
+	    {
+	    	cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+	    }else
+	    {
+	    	cisResult.setResponseCode(CISConstants.RESPONSE_FAILURE);
+	    }
+	  
+		 cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+		 return cisResult;
+	}
+
+	public CISResults getStaffListValidation(HttpServletRequest request,
+			DigiHealthCareSaveStaffMemberModel viewStaffmember) {
+		// TODO Auto-generated method stub
+        CISResults cisResult=new CISResults();
+		
+		cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+		String headerAuthorization=request.getHeader(CISConstants.HEADERS_AUTHROIZATION);
+	        
+		//Validate Headers AUTHROIZATION
+	    if(headerAuthorization.equals(CISConstants.HEADERS_AUTHROIZATION_VAUE))
+	    {
+	    	cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+	    }else
+	    {
+	    	cisResult.setResponseCode(CISConstants.RESPONSE_FAILURE);
+	    }
+	  
+		 cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+		 return cisResult;
+	}
+
+	public CISResults saveStaffMemberValidation(HttpServletRequest request,
+			DigiHealthCareSaveStaffMemberModel saveStaffmember) {
+		// TODO Auto-generated method stub
+		CISResults cisResult=new CISResults();
+		
+		cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+		String headerAuthorization=request.getHeader(CISConstants.HEADERS_AUTHROIZATION);
+	        
+		//Validate Headers AUTHROIZATION
+	    if(headerAuthorization.equals(CISConstants.HEADERS_AUTHROIZATION_VAUE))
+	    {
+	    	cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+	    }else
+	    {
+	    	cisResult.setResponseCode(CISConstants.RESPONSE_FAILURE);
+	    }
+	  
+		 cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+		 return cisResult;
+	}
+
+	public CISResults updateStaffDetailsValidation(HttpServletRequest request,
+			DigiHealthCareSaveStaffMemberModel updateStaff) {
+		// TODO Auto-generated method stub
+		CISResults cisResult=new CISResults();
+		
+		cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+		String headerAuthorization=request.getHeader(CISConstants.HEADERS_AUTHROIZATION);
+	        
+		//Validate Headers AUTHROIZATION
+	    if(headerAuthorization.equals(CISConstants.HEADERS_AUTHROIZATION_VAUE))
+	    {
+	    	cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+	    }else
+	    {
+	    	cisResult.setResponseCode(CISConstants.RESPONSE_FAILURE);
+	    }
+	  
+		 cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
+		 return cisResult;
+	}*/
 }
+
