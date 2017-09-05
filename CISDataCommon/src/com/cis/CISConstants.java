@@ -52,7 +52,8 @@ public class CISConstants {
 	public static final int totalDay=0;
 	//public static final int totalDay2=1;
 	public static final String ADMINPHONENUMBER="167846213390";
-	public static final String ADMINEMAILID="darshan@castusinfo.com";
+	public static final String ADMINEMAILID="darshan2108@gmail.com";
+	public static final String DIRECTOREMAILID="prasad9620@gmail.com";
 	public static final String EMAILHOST="castusinfo.com";
 	public static final String EMAILUSERNAME="arcturus@castusinfo.com";
 	public static final String EMAILPASSWORD="arcturus";
@@ -62,7 +63,15 @@ public class CISConstants {
 	public static final String SUBJECT ="Arcturus";
 	public static final String CANCEL ="cancelled";
 	public static final String RECIEVED ="Recieved message";
+	public static final String WEEK ="W";
+	public static final String MONTH ="M";
+	public static final String BYWEEK ="2W";
+	public static final String SINGLE ="";
+	public static final String DIRPHONE ="17326403224";
 	
+	public static final String APPOINTMENT_CREATED ="Appointment Created";
+	public static final String APPOINTMENT_CANCEL ="Appointment Cancelled";
+	public static final String APPOINTMENT_UPDATE ="Appointment Rescheduled";
 	
 	public CISConstants() {
 		

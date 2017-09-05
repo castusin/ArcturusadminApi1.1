@@ -4,6 +4,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.StringReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -125,5 +126,174 @@ public class SMSCommunication {
          
 	   	return cisResult;
 	}
+
+	public CISResults sendRegistrationSMS(String patientEmail, String appwith,
+			String startTime, String endTime, String type, String stfname,
+			String stlname, int recurrenceTime, String cc, String bcc,
+			String directorMail, String phoneNumber, String dirPhone, String adminPhone, String staffPhoneNumber) throws Throwable {
+
+
+		CISResults cisResult=new CISResults();
+		String postData="";
+         String retval = "";
+         
+         //KAP SYSTEMS PROVIDERS LOGIN DETAILS DEMO ACCOUNT DETAILS
+         // TODO: Remove hard coded data.
+         String Username ="arcturuscare";
+         String Password = "arcturus1@3";
+         String SenderID = "KAPNFO"; 
+         String Type="longsms";
+         String Message = "Appointment with :"+appwith + "scheduled at" +startTime+ " ";
+        // Arcturus : John Vonn provided feedback.
+       //  http://193.105.74.159/api/v3/sendsms/plain?user=internationalsms&password=HZlGhtj&sender=KAPNFO&SMSText=TEST&type=longsms&GSM=17325800762
+         
+         postData += "user=" + Username + "&password=" + Password + "&sender=" +           
+        		 SenderID +"&SMSText=" +Message + "&type="+Type+ "&GSM="+dirPhone+adminPhone+phoneNumber+staffPhoneNumber;
+		 URL url = new URL("http://193.105.74.159/api/v3/sendsms/plain?");
+		 HttpURLConnection urlconnection = (HttpURLConnection) url.openConnection();
+         urlconnection.setRequestMethod("POST");
+         urlconnection.setRequestProperty("Content-Type","application/x-www-form-urlencoded");
+         urlconnection.setDoOutput(true);
+         OutputStreamWriter out = new            
+         OutputStreamWriter(urlconnection.getOutputStream());
+         out.write(postData);
+         out.close();
+         BufferedReader in = new BufferedReader( new  InputStreamReader(urlconnection.getInputStream()));
+         String decodedString;
+         while ((decodedString = in.readLine()) != null) {
+               retval += decodedString;
+         }
+         in.close();
+         System.out.println("SMS STATUS: "+retval);
+         
+	   	return cisResult;
+	}
+
+	public CISResults sendDeleteSMS(String patientEmail, String type,
+			String startTime, String firstName, String lastname, String cc,
+			String bcc, String directorMail, String phoneNumber, String dirPhone, String adminPhone) throws Throwable {
+
+
+		CISResults cisResult=new CISResults();
+		String postData="";
+         String retval = "";
+         
+         //KAP SYSTEMS PROVIDERS LOGIN DETAILS DEMO ACCOUNT DETAILS
+         // TODO: Remove hard coded data.
+         String Username ="arcturuscare";
+         String Password = "arcturus1@3";
+         String SenderID = "KAPNFO"; 
+         String Type="longsms";
+         String Message = "Appointment deleted";
+        // Arcturus : John Vonn provided feedback.
+       //  http://193.105.74.159/api/v3/sendsms/plain?user=internationalsms&password=HZlGhtj&sender=KAPNFO&SMSText=TEST&type=longsms&GSM=17325800762
+         
+         postData += "user=" + Username + "&password=" + Password + "&sender=" +           
+        		 SenderID +"&SMSText=" +Message + "&type="+Type+ "&GSM="+dirPhone+adminPhone+phoneNumber;
+		 URL url = new URL("http://193.105.74.159/api/v3/sendsms/plain?");
+		 HttpURLConnection urlconnection = (HttpURLConnection) url.openConnection();
+         urlconnection.setRequestMethod("POST");
+         urlconnection.setRequestProperty("Content-Type","application/x-www-form-urlencoded");
+         urlconnection.setDoOutput(true);
+         OutputStreamWriter out = new            
+         OutputStreamWriter(urlconnection.getOutputStream());
+         out.write(postData);
+         out.close();
+         BufferedReader in = new BufferedReader( new  InputStreamReader(urlconnection.getInputStream()));
+         String decodedString;
+         while ((decodedString = in.readLine()) != null) {
+               retval += decodedString;
+         }
+         in.close();
+         System.out.println("SMS STATUS: "+retval);
+         
+	   	return cisResult;
+	}
+
+	public CISResults sendRegistrationSMSworecurrence(String patientEmail,
+			String appwith, String startTime, String endTime, String type,
+			int recurrenceTime, String cc, String bcc, String directorMail,
+			String phoneNumber, String dirPhone, String adminPhone, String staffPhoneNumber) throws Throwable {
+		// TODO Auto-generated method stub
+
+
+		CISResults cisResult=new CISResults();
+		String postData="";
+         String retval = "";
+         
+         //KAP SYSTEMS PROVIDERS LOGIN DETAILS DEMO ACCOUNT DETAILS
+         // TODO: Remove hard coded data.
+         String Username ="arcturuscare";
+         String Password = "arcturus1@3";
+         String SenderID = "KAPNFO"; 
+         String Type="longsms";
+         String Message = "Appointment with :"+appwith + "scheduled at" +startTime+ " ";
+        // Arcturus : John Vonn provided feedback.
+       //  http://193.105.74.159/api/v3/sendsms/plain?user=internationalsms&password=HZlGhtj&sender=KAPNFO&SMSText=TEST&type=longsms&GSM=17325800762
+         
+         postData += "user=" + Username + "&password=" + Password + "&sender=" +           
+        		 SenderID +"&SMSText=" +Message + "&type="+Type+ "&GSM="+dirPhone+adminPhone+phoneNumber+staffPhoneNumber;
+		 URL url = new URL("http://193.105.74.159/api/v3/sendsms/plain?");
+		 HttpURLConnection urlconnection = (HttpURLConnection) url.openConnection();
+         urlconnection.setRequestMethod("POST");
+         urlconnection.setRequestProperty("Content-Type","application/x-www-form-urlencoded");
+         urlconnection.setDoOutput(true);
+         OutputStreamWriter out = new            
+         OutputStreamWriter(urlconnection.getOutputStream());
+         out.write(postData);
+         out.close();
+         BufferedReader in = new BufferedReader( new  InputStreamReader(urlconnection.getInputStream()));
+         String decodedString;
+         while ((decodedString = in.readLine()) != null) {
+               retval += decodedString;
+         }
+         in.close();
+         System.out.println("SMS STATUS: "+retval);
+         
+	   	return cisResult;
+	}
+
+	public CISResults sendUpdateSMS(String patientEmail, String appwith,
+			String startTime, String endTime, String type, String fname,
+			String lname, int recurrenceTime, String phoneNumber,
+			String dirPhone, String staffPhone, String adminPhone) throws Throwable {
+
+
+		CISResults cisResult=new CISResults();
+		String postData="";
+         String retval = "";
+         
+         //KAP SYSTEMS PROVIDERS LOGIN DETAILS DEMO ACCOUNT DETAILS
+         // TODO: Remove hard coded data.
+         String Username ="arcturuscare";
+         String Password = "arcturus1@3";
+         String SenderID = "KAPNFO"; 
+         String Type="longsms";
+         String Message = "Appointment updated :"+appwith + "scheduled at" +startTime+ " ";
+        // Arcturus : John Vonn provided feedback.
+       //  http://193.105.74.159/api/v3/sendsms/plain?user=internationalsms&password=HZlGhtj&sender=KAPNFO&SMSText=TEST&type=longsms&GSM=17325800762
+         
+         postData += "user=" + Username + "&password=" + Password + "&sender=" +           
+        		 SenderID +"&SMSText=" +Message + "&type="+Type+ "&GSM="+dirPhone+adminPhone+phoneNumber+staffPhone;
+		 URL url = new URL("http://193.105.74.159/api/v3/sendsms/plain?");
+		 HttpURLConnection urlconnection = (HttpURLConnection) url.openConnection();
+         urlconnection.setRequestMethod("POST");
+         urlconnection.setRequestProperty("Content-Type","application/x-www-form-urlencoded");
+         urlconnection.setDoOutput(true);
+         OutputStreamWriter out = new            
+         OutputStreamWriter(urlconnection.getOutputStream());
+         out.write(postData);
+         out.close();
+         BufferedReader in = new BufferedReader( new  InputStreamReader(urlconnection.getInputStream()));
+         String decodedString;
+         while ((decodedString = in.readLine()) != null) {
+               retval += decodedString;
+         }
+         in.close();
+         System.out.println("SMS STATUS: "+retval);
+         
+	   	return cisResult;
+	}
+
 
 }

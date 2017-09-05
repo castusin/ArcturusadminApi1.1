@@ -41,7 +41,7 @@ public class DigihealthCareAdminCreateServiceBL {
 	      CISResults cisResult = adminCreateServiceDAO.isPatinetExists(phoneNumber);
 	      if(cisResult.getResponseCode().equalsIgnoreCase(CISConstants.RESPONSE_SUCCESS))
 		  {
-	         cisResult = adminCreateServiceDAO.addPatients(savePatient.getAppId(),userId,savePatient.getAccountType(),savePatient.getFirstName(),savePatient.getLastName(),phoneNumber,savePatient.getPassword(),savePatient.getEmailId(),savePatient.getGender(),savePatient.getPhoto(),savePatient.getDob(),saveDate,sessionId);
+	         cisResult = adminCreateServiceDAO.addPatients(savePatient.getAppId(),userId,savePatient.getAccountType(),savePatient.getFirstName(),savePatient.getLastName(),phoneNumber,savePatient.getPassword(),savePatient.getEmailId(),savePatient.getGender(),savePatient.getPhoto(),savePatient.getDob(),saveDate,sessionId,savePatient.getAddress(),savePatient.getLandmark(),savePatient.getCity(),savePatient.getState(),savePatient.getCounty(),savePatient.getZipcode(),savePatient.getLattitude(),savePatient.getLongitude());
 		  }
 		return cisResult;
 		

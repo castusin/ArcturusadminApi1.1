@@ -19,7 +19,7 @@ import com.cis.testServiceTime;
 				String accountType, String firstName, String lastName,
 				String phoneNumber,  String password,
 				String emailId, String gender, String photo, String dob,
-				String saveDate, String sessionId) {
+				String saveDate, String sessionId, String address,String landmark, String city, String state, String country, String zipcode, String lattitude, String longitude) {
 			
 			Logger logger = Logger.getLogger(DigihealthCareAdminCreateServiceDAO.class);
 			CISResults cisResults=new CISResults();
@@ -29,7 +29,7 @@ import com.cis.testServiceTime;
 				 TimeCheck time=new TimeCheck();
 				 testServiceTime sessionTimeCheck=new testServiceTime();
 				 String serviceStartTime=time.getTimeZone();
-				getJdbcTemplate().update(DigihealthCareAdminCreateServiceQuery.SQL_PATIENT_INFO,appId,userId,accountType,firstName,lastName,phoneNumber,password,emailId,gender,photo,dob,saveDate);
+				getJdbcTemplate().update(DigihealthCareAdminCreateServiceQuery.SQL_PATIENT_INFO,appId,userId,accountType,firstName,lastName,phoneNumber,password,emailId,gender,photo,dob,saveDate,address,landmark,city,state,country,zipcode,lattitude,longitude);
 				 String serviceEndTime=time.getTimeZone();
 				 sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
 				 logger.info("patient info query time:: " +cisResults);

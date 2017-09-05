@@ -12,7 +12,7 @@ import javax.mail.internet.MimeMessage;
 public class EmailCommunication {
 	
 	public String sendMailWithAuth(String host, String user, String password,
-	        String port, String to, String body, String subject, String cc, String bcc) throws Exception{
+	        String port, String to, String body, String subject, String cc, String bcc,String director) throws Exception{
 	   
 	    
 	    Properties props = System.getProperties();
@@ -34,8 +34,10 @@ public class EmailCommunication {
 
 	      // To get the array of addresses    
 	     message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-	     message.addRecipient(RecipientType.BCC, new InternetAddress(bcc));
 	     message.addRecipient(RecipientType.CC, new InternetAddress(cc));
+	     message.addRecipient(RecipientType.BCC, new InternetAddress(bcc));
+	     message.addRecipient(RecipientType.BCC, new InternetAddress(director));
+	    
 
 	      message.setSubject(subject);
 	    
@@ -89,9 +91,7 @@ public class EmailCommunication {
                 "  Thanks,<br />\n" +
                 "<br />\n"+
                 " Arcturus Care Admin<br />\n" +
-
                 "  <br />\n" +
-
                 "</body>\n" +
                 "</html>";
 	String subject = CISConstants.SUBJECT;
@@ -106,7 +106,7 @@ public class EmailCommunication {
 	}*/
 	
 	
-	public CISResults sendPatientMail(String patientEmail, String appwith, String startTime, String endTime, String type, String name, String fname, int recurrenceTime, String cc, String bcc) {
+	public CISResults sendPatientMail(String patientEmail, String appwith, String startTime, String endTime, String type, String name, String fname, int recurrenceTime, String cc, String bcc, String directorMail) {
 		// TODO Auto-generated method stub
 		CISResults cisResult = new CISResults();
 		
@@ -118,11 +118,11 @@ public class EmailCommunication {
                 "</head>\n" +
                 "\n" +
                 "<body>\n" +
-                /* "<p>Arcturus Care </b><br />"+*/
+                /* "<p>Arcturus Care </b><br />"+*/ 
                 
   				
 				"<p>Hi, <br />"+
-				 "<p>Your care plan schedule has been modified.</b><br />"+
+				 "<p>Your care plan schedule has been created.</b><br />"+
 				 "<p>Please check updated schedule in Digital Health Care Mobile App. </b><br />"+
 				
 				 "<p>If you have any questions, please contact our office.</b><br />"+
@@ -138,7 +138,7 @@ public class EmailCommunication {
                 "</html>";
 	String subject = CISConstants.SUBJECT;
 	 try {
-		 String result = sendMailWithAuth(CISConstants.EMAILHOST,CISConstants.EMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc);
+		 String result = sendMailWithAuth(CISConstants.EMAILHOST,CISConstants.EMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc,directorMail);
 	  
 	 } catch (Exception e) {
 		// TODO Auto-generated catch block
@@ -180,9 +180,7 @@ public class EmailCommunication {
                 "  Thanks,<br />\n" +
                 "<br />\n"+
                 " Arcturus Care Admin<br />\n" +
-
                 "  <br />\n" +
-
                 "</body>\n" +
                 "</html>";
 	String subject = CISConstants.SUBJECT;
@@ -196,10 +194,9 @@ public class EmailCommunication {
 		return cisResult;
 	}*/
 
-	public CISResults sendPatientDelMail(String patientEmail,String type, String startTime,String fname, String lname,  String cc, String bcc) {
+	public CISResults sendPatientDelMail(String patientEmail,String type, String startTime,String fname, String lname,  String cc, String bcc,String directorMail) {
       
 		CISResults cisResult = new CISResults();
-		
 		String msg="<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
                 "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n" +
                 "<head>\n" +
@@ -212,7 +209,7 @@ public class EmailCommunication {
                 
   				
 				"<p>Hi, <br />"+
-				 "<p>Your care plan schedule has been modified.</b><br />"+
+				 "<p>Your care plan schedule has been deleted.</b><br />"+
 				 "<p>Please check updated schedule in Digital Health Care Mobile App. </b><br />"+
 				
 				 "<p>If you have any questions, please contact our office.</b><br />"+
@@ -228,7 +225,7 @@ public class EmailCommunication {
                 "</html>";
 	String subject = CISConstants.SUBJECT;
 	 try {
-		 String result = sendMailWithAuth(CISConstants.EMAILHOST,CISConstants.EMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc);
+		 String result = sendMailWithAuth(CISConstants.EMAILHOST,CISConstants.EMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc,directorMail);
 	  
 	 } catch (Exception e) {
 		// TODO Auto-generated catch block
@@ -239,7 +236,7 @@ public class EmailCommunication {
 
 	public CISResults sendPatientUpdateMail(String patientEmail,
 			String appwith, String startTime, String endTime, String type,
-			String fname, String lname, int recurrenceTime, String cc, String bcc) {
+			String fname, String lname, int recurrenceTime, String cc, String bcc,String directorMail) {
 		
 		CISResults cisResult = new CISResults();
 		String msg="<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
@@ -276,7 +273,7 @@ public class EmailCommunication {
                 "</html>";
 	String subject = CISConstants.SUBJECT;
 	 try {
-		 String result = sendMailWithAuth(CISConstants.EMAILHOST,CISConstants.EMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc);
+		 String result = sendMailWithAuth(CISConstants.EMAILHOST,CISConstants.EMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc,directorMail);
 	  
 	 } catch (Exception e) {
 		// TODO Auto-generated catch block
@@ -287,7 +284,7 @@ public class EmailCommunication {
 
 	public CISResults sendPatientMailSingle(String patientEmail,
 			String appwith, String startTime, String endTime, String type,
-			String fname, String lname, int recurrenceTime, String cc, String bcc) {
+			String fname, String lname, int recurrenceTime, String cc, String bcc,String directorMail) {
 CISResults cisResult = new CISResults();
 		
 		String msg="<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
@@ -322,7 +319,7 @@ CISResults cisResult = new CISResults();
                 "</html>";
 	String subject = CISConstants.SUBJECT;
 	 try {
-		 String result = sendMailWithAuth(CISConstants.EMAILHOST,CISConstants.EMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc);
+		 String result = sendMailWithAuth(CISConstants.EMAILHOST,CISConstants.EMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc, directorMail);
 	  
 	 } catch (Exception e) {
 		// TODO Auto-generated catch block
@@ -333,7 +330,7 @@ CISResults cisResult = new CISResults();
 
 	public CISResults sendPatienSingleUpdatetMail(String patientEmail,
 			String appwith, String startTime, String endTime, String type,
-			String fname, String lname, int recurrenceTime, String cc, String bcc) {
+			String fname, String lname, int recurrenceTime, String cc, String bcc,String directorMail) {
 		CISResults cisResult = new CISResults();
 		String msg="<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
                 "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n" +
@@ -369,7 +366,7 @@ CISResults cisResult = new CISResults();
                 "</html>";
 	String subject = CISConstants.SUBJECT;
 	 try {
-		 String result = sendMailWithAuth(CISConstants.EMAILHOST,CISConstants.EMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc);
+		 String result = sendMailWithAuth(CISConstants.EMAILHOST,CISConstants.EMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc, directorMail);
 	  
 	 } catch (Exception e) {
 		// TODO Auto-generated catch block
@@ -401,14 +398,11 @@ CISResults cisResult = new CISResults();
 				
 				
 				"<p>Please call our office if you have any questions. </b><br />"+
-
                 "<br />\n"+
                 "  Thanks,<br />\n" +
                 "<br />\n"+
                 " Arcturus Care Admin<br />\n" +
-
                 "  <br />\n" +
-
                 "</body>\n" +
                 "</html>";
 	String subject = CISConstants.SUBJECT;
@@ -422,4 +416,3 @@ CISResults cisResult = new CISResults();
 		return cisResult;
 	}*/
 }
-
