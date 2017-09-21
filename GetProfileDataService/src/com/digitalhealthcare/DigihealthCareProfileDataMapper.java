@@ -25,6 +25,15 @@ public class DigihealthCareProfileDataMapper implements RowMapper{
 		homeCareRegistration.setDob(rs.getString("DOB"));
 		homeCareRegistration.setDate(rs.getDate("Date"));
 		
+		homeCareRegistration.setAddress(rs.getString("Address"));
+		homeCareRegistration.setLandmark(rs.getString("Landmark"));
+		homeCareRegistration.setCity(rs.getString("City"));
+		homeCareRegistration.setState(rs.getString("State"));
+		homeCareRegistration.setCounty(rs.getString("County"));
+		homeCareRegistration.setZipcode(rs.getString("Zipcode"));
+		homeCareRegistration.setLattitude(rs.getFloat("Lattitude"));
+		homeCareRegistration.setLongitude(rs.getFloat("Longitude"));
+		
 		return homeCareRegistration;
 	}
 

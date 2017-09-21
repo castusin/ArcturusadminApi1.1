@@ -138,7 +138,7 @@ public class EmailCommunication {
                 "</html>";
 	String subject = CISConstants.SUBJECT;
 	 try {
-		 String result = sendMailWithAuth(CISConstants.EMAILHOST,CISConstants.EMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc,directorMail);
+		 String result = sendMailWithAuth(CISConstants.PRODEMAILHOST,CISConstants.PRODEMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc,directorMail);
 	  
 	 } catch (Exception e) {
 		// TODO Auto-generated catch block
@@ -225,7 +225,7 @@ public class EmailCommunication {
                 "</html>";
 	String subject = CISConstants.SUBJECT;
 	 try {
-		 String result = sendMailWithAuth(CISConstants.EMAILHOST,CISConstants.EMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc,directorMail);
+		 String result = sendMailWithAuth(CISConstants.PRODEMAILHOST,CISConstants.PRODEMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc,directorMail);
 	  
 	 } catch (Exception e) {
 		// TODO Auto-generated catch block
@@ -273,7 +273,7 @@ public class EmailCommunication {
                 "</html>";
 	String subject = CISConstants.SUBJECT;
 	 try {
-		 String result = sendMailWithAuth(CISConstants.EMAILHOST,CISConstants.EMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc,directorMail);
+		 String result = sendMailWithAuth(CISConstants.PRODEMAILHOST,CISConstants.PRODEMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc,directorMail);
 	  
 	 } catch (Exception e) {
 		// TODO Auto-generated catch block
@@ -285,7 +285,8 @@ public class EmailCommunication {
 	public CISResults sendPatientMailSingle(String patientEmail,
 			String appwith, String startTime, String endTime, String type,
 			String fname, String lname, int recurrenceTime, String cc, String bcc,String directorMail) {
-CISResults cisResult = new CISResults();
+		
+		CISResults cisResult = new CISResults();
 		
 		String msg="<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n" +
                 "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n" +
@@ -319,7 +320,7 @@ CISResults cisResult = new CISResults();
                 "</html>";
 	String subject = CISConstants.SUBJECT;
 	 try {
-		 String result = sendMailWithAuth(CISConstants.EMAILHOST,CISConstants.EMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc, directorMail);
+		 String result = sendMailWithAuth(CISConstants.PRODEMAILHOST,CISConstants.PRODEMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc, directorMail);
 	  
 	 } catch (Exception e) {
 		// TODO Auto-generated catch block
@@ -366,7 +367,7 @@ CISResults cisResult = new CISResults();
                 "</html>";
 	String subject = CISConstants.SUBJECT;
 	 try {
-		 String result = sendMailWithAuth(CISConstants.EMAILHOST,CISConstants.EMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc, directorMail);
+		 String result = sendMailWithAuth(CISConstants.PRODEMAILHOST,CISConstants.PRODEMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc, directorMail);
 	  
 	 } catch (Exception e) {
 		// TODO Auto-generated catch block

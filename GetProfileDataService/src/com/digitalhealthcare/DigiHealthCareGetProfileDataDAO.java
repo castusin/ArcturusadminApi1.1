@@ -42,6 +42,14 @@ public class DigiHealthCareGetProfileDataDAO extends JdbcDaoSupport {
 			profileData.setLastName(profileData.getLastName());
 			profileData.setEmailId(profileData.getEmailId());	
 			profileData.setPhoneNumber(profileData.getPhoneNumber());
+			profileData.setAddress(profileData.getAddress());
+			profileData.setLandmark(profileData.getLandmark());
+			profileData.setCity(profileData.getCity());
+			profileData.setState(profileData.getState());
+			profileData.setCounty(profileData.getCounty());
+			profileData.setZipcode(profileData.getZipcode());
+			profileData.setLattitude(profileData.getLattitude());
+			profileData.setLongitude(profileData.getLongitude());
 			
 			cisResults.setResultObject(profileData);
 		} catch (DataAccessException e) {

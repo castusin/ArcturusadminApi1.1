@@ -34,8 +34,8 @@ public class DigihealthCareProfileData {
 	public String state;
 	public String county;
 	public String zipcode;
-	public String lattitude;
-	public String longitude;
+	public float lattitude;
+	public float longitude;
 	//public List<DigihealthCareCareTakersService> careTakerDetails;
 	
 	
@@ -108,22 +108,23 @@ public class DigihealthCareProfileData {
 	}
 
 
-	public String getLattitude() {
+	
+	public float getLattitude() {
 		return lattitude;
 	}
 
 
-	public void setLattitude(String lattitude) {
+	public void setLattitude(float lattitude) {
 		this.lattitude = lattitude;
 	}
 
 
-	public String getLongitude() {
+	public float getLongitude() {
 		return longitude;
 	}
 
 
-	public void setLongitude(String longitude) {
+	public void setLongitude(float longitude) {
 		this.longitude = longitude;
 	}
 
@@ -186,7 +187,7 @@ public class DigihealthCareProfileData {
 			 String firstName, String lastName,
 			String phoneNumber, String password, String emailId, String photo,
 			String accountType, String gender, String dob, Date date,
-			String sessionId, String sessionTimeStamp, String deviceId, String deviceToken, String deviceType, String status, String dateTime, String address, String city, String state, String country, String zipcode, String lattitude, String longitude, String landmark, String county) {
+			String sessionId, String sessionTimeStamp, String deviceId, String deviceToken, String deviceType, String status, String dateTime, String address, String city, String state, String country, String zipcode, float lattitude, float longitude, String landmark, String county) {
 		super();
 		this.appId = appId;
 		this.userId = userId;

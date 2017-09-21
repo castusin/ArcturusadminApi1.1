@@ -49,8 +49,12 @@ public class DigiHealthCareAdminProfileUpdateDAO extends JdbcDaoSupport {
 	 */
 
 
-	public CISResults updateProfile(String appId, String userId,String accountType, String firstName, String lastName,
-			String phoneNumber, String emailId, String gender,String photo, String dob) {
+	public CISResults updateProfile(String appId, String userId,
+			String accountType, String firstName, String lastName,
+			String phoneNumber, String emailId, String gender, String photo,
+			String dob, String address, String landmark, String city,
+			String state, String county, String zipcode, float lattitude,
+			float longitude) {
 		Logger logger = Logger.getLogger(DigiHealthCareAdminProfileUpdateDAO.class);
 		DigiHealthCareAdminProfileUpdate profileUpdate=new DigiHealthCareAdminProfileUpdate();
 		CISResults cisResults=new CISResults();
@@ -58,7 +62,7 @@ public class DigiHealthCareAdminProfileUpdateDAO extends JdbcDaoSupport {
 		DateFormat dateFormat = new SimpleDateFormat(CISConstants.DATE_FORMAT);
 		
 		cisResults.setResponseCode(CISConstants.RESPONSE_SUCCESS);
-		Object[] inputs = new Object[]{appId,accountType,firstName,lastName,phoneNumber,emailId,gender,photo,dob,dateFormat.format(cal.getTime()),userId};
+		Object[] inputs = new Object[]{appId,accountType,firstName,lastName,phoneNumber,emailId,gender,photo,dob,dateFormat.format(cal.getTime()),address,landmark,city,state,county,zipcode,lattitude,longitude,userId};
 		try{
 			// Capture service Start time
 			 TimeCheck time=new TimeCheck();
@@ -68,7 +72,7 @@ public class DigiHealthCareAdminProfileUpdateDAO extends JdbcDaoSupport {
 		    String serviceEndTime=time.getTimeZone();
             long result= sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
 			 logger.info("Admin update profile query time:: " +result);
-		    profileUpdate.setFirstName(firstName);
+		    /*profileUpdate.setFirstName(firstName);
 			profileUpdate.setLastName(lastName);
 			profileUpdate.setAppId(appId);
 			profileUpdate.setAccountType(accountType);
@@ -78,8 +82,8 @@ public class DigiHealthCareAdminProfileUpdateDAO extends JdbcDaoSupport {
 			profileUpdate.setUserId(userId);
 			profileUpdate.setGender(gender);
 			profileUpdate.setPhoto(photo);
-			profileUpdate.setDob(dob);
-			cisResults.setResultObject(profileUpdate);
+			profileUpdate.setDob(dob);*/
+			cisResults.setResultObject(cisResults);
 		} catch (DataAccessException e) {
 			e.printStackTrace();
 			cisResults.setResponseCode(CISConstants.RESPONSE_FAILURE);
@@ -89,6 +93,7 @@ public class DigiHealthCareAdminProfileUpdateDAO extends JdbcDaoSupport {
    		return cisResults;  
 	}
 
+	
 	
 }
 

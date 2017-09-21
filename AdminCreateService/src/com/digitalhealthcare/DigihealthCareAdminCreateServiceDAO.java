@@ -19,7 +19,7 @@ import com.cis.testServiceTime;
 				String accountType, String firstName, String lastName,
 				String phoneNumber,  String password,
 				String emailId, String gender, String photo, String dob,
-				String saveDate, String sessionId, String address,String landmark, String city, String state, String country, String zipcode, String lattitude, String longitude) {
+				String saveDate, String sessionId, String address,String landmark, String city, String state, String country, String zipcode, float lattitude, float longitude) {
 			
 			Logger logger = Logger.getLogger(DigihealthCareAdminCreateServiceDAO.class);
 			CISResults cisResults=new CISResults();

@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import com.cis.CISConstants;
 import com.cis.CISResults;
 import com.cis.CISSessionWebservice;
-import com.digitalhealthcare.ViewMessagesModel;
 
 
 public class CommonCISValidation {
@@ -847,7 +846,7 @@ public CISResults  adminViewPlansValidation(String patientId,HttpServletRequest 
 		 return cisResult;
 	}
 
-	public CISResults viewMessagesValidation(HttpServletRequest request,
+	/*public CISResults viewMessagesValidation(HttpServletRequest request,
 			ViewMessagesModel viewMessages) {
 		// TODO Auto-generated method stub
 		CISResults cisResult=new CISResults();
@@ -866,7 +865,7 @@ public CISResults  adminViewPlansValidation(String patientId,HttpServletRequest 
 	  
 		 cisResult.setResponseCode(CISConstants.RESPONSE_SUCCESS);
 		 return cisResult;
-	}
+	}*/
 
 	/*public CISResults viewMessagesValidation(HttpServletRequest request,
 			ViewMessagesModel viewMessages) {
