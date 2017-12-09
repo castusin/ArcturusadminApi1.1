@@ -22,8 +22,13 @@ public class DigiHealthCareAdminProfileUpdateBL {
 	 */
 	public CISResults updateProfile(DigiHealthCareAdminProfileUpdate adminUpdateProfile) {
 		final Logger logger = Logger.getLogger(DigiHealthCareAdminProfileUpdateBL.class);
+		CISResults cisResult=new CISResults();
 		String phoneNumber=CISConstants.USA_COUNTRY_CODE+adminUpdateProfile.getPhoneNumber(); 
-		CISResults cisResult = profileUpdateDAO.updateProfile(adminUpdateProfile.getAppId(),adminUpdateProfile.getUserId(),adminUpdateProfile.getAccountType(),adminUpdateProfile.getFirstName(),adminUpdateProfile.getLastName(),phoneNumber,adminUpdateProfile.getEmailId(),adminUpdateProfile.getGender(),adminUpdateProfile.getPhoto(),adminUpdateProfile.getDob(),adminUpdateProfile.getAddress(),adminUpdateProfile.getLandmark(),adminUpdateProfile.getCity(),adminUpdateProfile.getState(),adminUpdateProfile.getCounty(),adminUpdateProfile.getZipcode(),adminUpdateProfile.getLattitude(),adminUpdateProfile.getLongitude());
+		//cisResult = profileUpdateDAO.checkPhoneNumber(phoneNumber);
+		 
+			 cisResult = profileUpdateDAO.updateProfile(adminUpdateProfile.getAppId(),adminUpdateProfile.getUserId(),adminUpdateProfile.getAccountType(),adminUpdateProfile.getFirstName(),adminUpdateProfile.getLastName(),phoneNumber,adminUpdateProfile.getEmailId(),adminUpdateProfile.getGender(),adminUpdateProfile.getPhoto(),adminUpdateProfile.getDob(),adminUpdateProfile.getAddress(),adminUpdateProfile.getLandmark(),adminUpdateProfile.getCity(),adminUpdateProfile.getState(),adminUpdateProfile.getCounty(),adminUpdateProfile.getZipcode(),adminUpdateProfile.getLattitude(),adminUpdateProfile.getLongitude());
+		 
+		
 		logger.debug("DigitalHealthCare:saveFeedback dao service" +cisResult );
 		return cisResult;
 	}

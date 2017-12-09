@@ -59,6 +59,8 @@ public class DigiHealthCareAdminAddCareTakerDAO extends JdbcDaoSupport {
 			 verifyPhoneNumber=(DigiHealthCareAdminAddCareTakerModel)getJdbcTemplate().queryForObject(DigiHealthCareAdminAddCareTakerQuery.SQL_CHECK_CARETAKER,inputs,new DigitalHealthCareIsCareTakerExistMapper());
 			 String serviceEndTime=time.getTimeZone();
 			 long result=sessionTimeCheck.getServiceTime(serviceEndTime,serviceStartTime);
+			 
+			 
 			 logger.info("check care taker query time:: " +result);
 			if(verifyPhoneNumber!=null){
 				cisResults.setResponseCode(CISConstants.RESPONSE_FAILURE);

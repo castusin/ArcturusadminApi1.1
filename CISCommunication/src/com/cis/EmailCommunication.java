@@ -138,7 +138,7 @@ public class EmailCommunication {
                 "</html>";
 	String subject = CISConstants.SUBJECT;
 	 try {
-		 String result = sendMailWithAuth(CISConstants.PRODEMAILHOST,CISConstants.PRODEMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc,directorMail);
+		 String result = sendMailWithAuth(CISConstants.EMAILHOST,CISConstants.EMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc,directorMail);
 	  
 	 } catch (Exception e) {
 		// TODO Auto-generated catch block
@@ -225,7 +225,7 @@ public class EmailCommunication {
                 "</html>";
 	String subject = CISConstants.SUBJECT;
 	 try {
-		 String result = sendMailWithAuth(CISConstants.PRODEMAILHOST,CISConstants.PRODEMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc,directorMail);
+		 String result = sendMailWithAuth(CISConstants.EMAILHOST,CISConstants.EMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc,directorMail);
 	  
 	 } catch (Exception e) {
 		// TODO Auto-generated catch block
@@ -273,7 +273,7 @@ public class EmailCommunication {
                 "</html>";
 	String subject = CISConstants.SUBJECT;
 	 try {
-		 String result = sendMailWithAuth(CISConstants.PRODEMAILHOST,CISConstants.PRODEMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc,directorMail);
+		 String result = sendMailWithAuth(CISConstants.EMAILHOST,CISConstants.EMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc,directorMail);
 	  
 	 } catch (Exception e) {
 		// TODO Auto-generated catch block
@@ -320,7 +320,7 @@ public class EmailCommunication {
                 "</html>";
 	String subject = CISConstants.SUBJECT;
 	 try {
-		 String result = sendMailWithAuth(CISConstants.PRODEMAILHOST,CISConstants.PRODEMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc, directorMail);
+		 String result = sendMailWithAuth(CISConstants.EMAILHOST,CISConstants.EMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc, directorMail);
 	  
 	 } catch (Exception e) {
 		// TODO Auto-generated catch block
@@ -367,7 +367,7 @@ public class EmailCommunication {
                 "</html>";
 	String subject = CISConstants.SUBJECT;
 	 try {
-		 String result = sendMailWithAuth(CISConstants.PRODEMAILHOST,CISConstants.PRODEMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc, directorMail);
+		 String result = sendMailWithAuth(CISConstants.EMAILHOST,CISConstants.EMAILUSERNAME,CISConstants.EMAILPASSWORD,CISConstants.PORT,patientEmail, msg, subject,cc,bcc, directorMail);
 	  
 	 } catch (Exception e) {
 		// TODO Auto-generated catch block

@@ -20,7 +20,6 @@ public class CISConstants {
 	public static final String SQL_ERROR_CODE = "1001";
 	public static final String Empty="";
 	public static final String DATE_FORMAT="yyyy-MM-dd HH:mm:ss.SSS";
-	public static final String DATABASE_NAME="jdbc/SimpleMoneyDB";
 	public static final String ACCOUNT_STATUS1="Account already exists, please login";
 	public static final String ACCOUNT_STATUS5="Account already exists ";
 	public static final String ACCOUNT_STATUS6="Already Added CareTaker to Patient";
@@ -51,15 +50,15 @@ public class CISConstants {
 	public static final String seriesStatus2="N";
 	public static final int totalDay=0;
 	//public static final int totalDay2=1;
-	public static final String ADMINPHONENUMBER="167846213390";
-	public static final String ADMINEMAILID="darshan2108@gmail.com";
+	public static final String ADMINPHONENUMBER="14703373204";
+	public static final String ADMINEMAILID="Sarisht@gmail.com";
 	public static final String DIRECTOREMAILID="prasad9620@gmail.com";
 	public static final String EMAILHOST="castusinfo.com";
 	public static final String PRODEMAILHOST="mathgator.com";
 	public static final String EMAILUSERNAME="arcturus@castusinfo.com";
 	public static final String PRODEMAILUSERNAME="arcturus@mathgator.com";
 	public static final String EMAILPASSWORD="arcturus";
-	public static final String PORT="2525";
+	public static final String PORT="25";
 	public static final String SMS_FAILED = "Sms failed to delivery ";
 	public static final String MAIL_FAILED = "Email failed to delivery ";
 	public static final String SUBJECT ="Arcturus";
